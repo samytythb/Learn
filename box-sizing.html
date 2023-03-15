@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-sizing</title>
+</head>
+
+<body>
+    <p>Khi chúng ta tạo phần tử có size được set và thêm cho nó các thuộc tính border, padding thì sẽ khiến size của
+        phần tử thay đổi</p>
+    <p><strong>box-sizing: content-box ;</strong> (mặc định)</p>
+    <p>Lúc này width = width + border (right-left) + padding (right-left)</p>
+    <p>height = height + border (top-bottom) + padding (top-bottom)</p>
+    <p>Để fix vấn để này ta sử dụng <strong>box-sizing: border-box ;</strong></p>
+    <p>Nó sẽ tính làm sao để cho size phân tử giống như đã đc set ( thu nhỏ content lại chừa chỗ cho padding, border)
+    </p>
+</body>
+
+</html>

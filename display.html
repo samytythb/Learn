@@ -15,6 +15,11 @@
         trước và sau nó</p>
     <p>Đây là một phần tử có thuộc tính hiển thị được đặt để chặn bắt đầu trên một dòng mới và chiếm chiều rộng màn hình
         có sẵn.</p>
+    <h4 style="color: green"> Các item có kiểu display: block luôn được xuống dòng và chiếm toàn bộ width nếu width
+        không được set
+        <br>Các item có kiểu display: block sẽ set được width, height, margin, padding đầy đủ 4 hướng (top, bottom,
+        right, left).
+    </h4>
     <span>Những thẻ có thuộc tính Block :</span><br>
     <p>
         <strong>address &emsp;article &emsp;aside
@@ -32,6 +37,17 @@
         dfn&emsp; em&emsp; i&emsp; img&emsp; input&emsp; kbd&emsp; label&emsp; map&emsp; object&emsp; output&emsp;
         q&emsp; samp&emsp; script&emsp; select&emsp; small&emsp; span&emsp; strong&emsp; sub&emsp; sup&emsp;
         textarea&emsp; time&emsp; tt&emsp; var&emsp;</strong>
+    <h4 style="color :green">Các item có kiểu display này không thể set width và height.<br>
+        Các inline item sẽ chỉ có thể điều chỉnh margin và padding left and right (top và bottom thì không thể).</h4>
+    <h1>Thuộc tính Inline-block</h1>
+    <h4 style="color: green">
+        Kiểu display: inline-block sẽ được sắp xếp giống với kiểu display: inline, nghĩa là các items sẽ được xếp cùng
+        nhau trên một dòng . <br>Tuy nhiên các items sẽ có thuộc tính của display: block như là có set width, height,
+        margin, padding đủ 4 hướng.</h4>
+    <p>Kiểu display này sẽ thường được sử dụng để tạo thanh navbar.</p>
+    <h1>Thuộc tính None</h1>
+    <p>Khi phần tử có thuộc tính <strong>display: none;</strong> đồng nghĩa với việc nó đã bị ẩn đi không hiển thị nữa.
+    </p>
 </body>
 
 </html>
