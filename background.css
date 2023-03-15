@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+.createBackground {
+  background: url(https://wall.vn/wp-content/uploads/2019/11/hinh-nen-phong-canh-den-trang-15.jpg)
+    no-repeat center center / cover;
+  width: 100vw;
+  height: 100vh;
+}
+p {
+  padding: 10px;
+  opacity: 0.9;
+  padding-left: 800px;
+}
+p:first-child {
+  padding-top: 100px;
+  padding-left: 800px;
+}
