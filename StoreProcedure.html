@@ -8,27 +8,28 @@
     <title>Store Procedure</title>
 </head>
 
-<body>
-    <span>It can be easily modified: We can easily modify the code inside the stored procedure without the need to
-        restart or deploying the application. For example, If the T-SQL queries are written in the application and if we
-        need to change the logic, we must change the code in the application and re-deploy it. SQL Server Stored
-        procedures eliminate such challenges by storing the code in the database. so, when we want to change the logic
-        inside the procedure we can just do it by simple ALTER PROCEDURE statement.
+<p>
+<p>It can be easily modified: We can easily modify the code inside the stored procedure without the need to
+    restart or deploying the application. For example, If the T-SQL queries are written in the application and if we
+    need to change the logic, we must change the code in the application and re-deploy it. SQL Server Stored
+    procedures eliminate such challenges by storing the code in the database. so, when we want to change the logic
+    inside the procedure we can just do it by simple ALTER PROCEDURE statement.</p><br>
 
-        Reduced network traffic: When we use stored procedures instead of writing T-SQL queries at the application
-        level, only the procedure name is passed over the network instead of the whole T-SQL code.
+<p>Reduced network traffic: When we use stored procedures instead of writing T-SQL queries at the application
+    level, only the procedure name is passed over the network instead of the whole T-SQL code.</p><br>
 
-        Reusable: Stored procedures can be executed by multiple users or multiple client applications without the need
-        of writing the code again.
+<p>Reusable: Stored procedures can be executed by multiple users or multiple client applications without the need
+    of writing the code again.</p><br>
 
-        Security: Stored procedures reduce the threat by eliminating direct access to the tables. we can also encrypt
-        the stored procedures while creating them so that source code inside the stored procedure is not visible. Use
-        third-party tools like ApexSQL Decrypt to decrypt the encrypted stored procedures.
+<p>Security: Stored procedures reduce the threat by eliminating direct access to the tables. we can also encrypt
+    the stored procedures while creating them so that source code inside the stored procedure is not visible. Use
+    third-party tools like ApexSQL Decrypt to decrypt the encrypted stored procedures.</p><br>
 
-        Performance: The SQL Server stored procedure when executed for the first time creates a plan and stores it in
-        the buffer pool so that the plan can be reused when it executes next time.
+<p>Performance: The SQL Server stored procedure when executed for the first time creates a plan and stores it in
+    the buffer pool so that the plan can be reused when it executes next time.
+<p>
 
-        I am creating sample tables that will be used in the examples in this article.</span>
+    I am creating sample tables that will be used in the examples in this article.</p><br>
 </body>
 
 </html>
