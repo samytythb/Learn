@@ -6,28 +6,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store Procedure</title>
+    <link rel="stylesheet" href="StoreProcedure.css">
 </head>
 
-<p>
-<p>It can be easily modified: We can easily modify the code inside the stored procedure without the need to
-    restart or deploying the application. For example, If the T-SQL queries are written in the application and if we
-    need to change the logic, we must change the code in the application and re-deploy it. SQL Server Stored
-    procedures eliminate such challenges by storing the code in the database. so, when we want to change the logic
-    inside the procedure we can just do it by simple ALTER PROCEDURE statement.</p><br>
+<body>
+    <h2>Store Procedure</h2>
+    <div>
 
-<p>Reduced network traffic: When we use stored procedures instead of writing T-SQL queries at the application
-    level, only the procedure name is passed over the network instead of the whole T-SQL code.</p><br>
+        <p class="text_bold text_color">Cách tạo Store Procedure</p>
+        <p>Tạo một SP đơn giản ( không tham số):</p>
+        <pre class="text_bold">CREATE PROCEDURE GetProductDesc
+    AS
+    BEGIN
+    SET NOCOUNT ON
+     
+    SELECT P.ProductID,P.ProductName,PD.ProductDescription  FROM 
+    Product P
+    INNER JOIN ProductDescription PD ON P.ProductID=PD.ProductID
+     
+    END
 
-<p>Reusable: Stored procedures can be executed by multiple users or multiple client applications without the need
-    of writing the code again.</p><br>
+    EXEC GetProductDesc</pre>
 
-<p>Security: Stored procedures reduce the threat by eliminating direct access to the tables. we can also encrypt
-    the stored procedures while creating them so that source code inside the stored procedure is not visible. Use
-    third-party tools like ApexSQL Decrypt to decrypt the encrypted stored procedures.</p><br>
-<p>Performance: The SQL Server stored procedure when executed for the first time creates a plan and stores it in
-    the buffer pool so that the plan can be reused when it executes next time.
-<p>
-    I am creating sample tables that will be used in the examples in this article.</p><br>
+        <p>Tạo một SP đơn giản (có tham số):</p>
+        <pre class="text_bold">CREATE PROCEDURE GetProductDesc_withparameters
+        (@PID INT)
+        AS
+        BEGIN
+        SET NOCOUNT ON
+         
+        SELECT P.ProductID,P.ProductName,PD.ProductDescription  FROM 
+        Product P
+        INNER JOIN ProductDescription PD ON P.ProductID=PD.ProductID
+        WHERE P.ProductID=@PID
+         
+        END
+
+        EXEC GetProductDesc_withparameters 706</pre>
+        <p>Tạo một Store Procedure được lưu trữ với các giá trị tham số mặc định</p>
+        <pre class="text_bold">CREATE PROCEDURE GetProductDesc_withDefaultparameters
+            (@PID INT =706)
+            AS
+            BEGIN
+            SET NOCOUNT ON
+             
+            SELECT P.ProductID,P.ProductName,PD.ProductDescription  FROM 
+            Product P
+            INNER JOIN ProductDescription PD ON P.ProductID=PD.ProductID
+            WHERE P.ProductID=@PID
+             
+            END</pre>
+        <p>Khi không truyền tham số, SP sẽ sử dụng giá trị tham số mặc định, còn nếu truyền thì sẽ dử dụng giá trị
+            truyền vào</p>
+    </div>
+    <div>
+        <p class="text_bold text_color">Ưu điểm</p>
+        <p><span class="text_bold">Có thể dễ dàng sửa đổi</span> : Chúng ta có thể dễ dàng sửa đổi mã bên trong
+            thủ tục được lưu trữ mà
+            không
+            cần
+            phải
+            khởi
+            động lại hoặc triển khai ứng dụng. Ví dụ: Nếu các truy vấn T-SQL được viết trong ứng dụng và nếu chúng
+            tôi
+            cần
+            thay
+            đổi logic, chúng tôi phải thay đổi mã trong ứng dụng và triển khai lại. Các thủ tục được lưu trữ của SQL
+            Server
+            loại
+            bỏ những thách thức như vậy bằng cách lưu trữ mã trong cơ sở dữ liệu. vì vậy, khi chúng ta muốn thay đổi
+            logic
+            bên
+            trong thủ tục, chúng ta có thể thực hiện điều đó bằng câu lệnh ALTER PROCEDURE đơn giản.</p>
+
+        <p><span class="text_bold">Giảm lưu lượng mạng</span>: Khi chúng tôi sử dụng các thủ tục được lưu trữ thay vì
+            viết các truy vấn T-SQL ở cấp
+            ứng
+            dụng,
+            chỉ có tên thủ tục được truyền qua mạng thay vì toàn bộ mã T-SQL.</p>
+
+        <p><span class="text_bold">Có thể tái sử dụng</span>: Các thủ tục được lưu trữ có thể được thực hiện bởi nhiều
+            người dùng hoặc nhiều ứng
+            dụng
+            khách
+            mà
+            không cần phải viết lại mã.</p>
+
+        <p><span class="text_bold">Bảo mật</span>: Các thủ tục được lưu trữ làm giảm mối đe dọa bằng cách loại bỏ quyền
+            truy cập trực tiếp vào các
+            bảng.
+            chúng
+            tôi cũng có thể mã hóa các thủ tục được lưu trữ trong khi tạo chúng để mã nguồn bên trong thủ tục được
+            lưu
+            trữ
+            không
+            hiển thị. Sử dụng các công cụ của bên thứ ba như ApexSQL Decrypt để giải mã các thủ tục được lưu trữ đã
+            mã
+            hóa.
+        </p>
+
+        <p><span class="text_bold">Hiệu suất</span>: Thủ tục được lưu trữ của SQL Server khi được thực thi lần đầu tiên
+            sẽ tạo một kế hoạch và lưu
+            trữ
+            nó
+            trong
+            vùng đệm để kế hoạch có thể được sử dụng lại khi thực hiện lần sau.
+    </div>
 </body>
 
 </html>
